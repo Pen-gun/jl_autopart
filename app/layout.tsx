@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Barlow_Condensed, DM_Sans } from "next/font/google";
 import { site, instagramUrl } from "@/lib/site";
 import "./globals.css";
 
-const sans = Plus_Jakarta_Sans({
-  variable: "--font-sans-custom",
+const heading = Barlow_Condensed({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+});
+
+const body = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
@@ -83,7 +90,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sans.variable} h-full antialiased`}>
+    <html lang="en" className={`${heading.variable} ${body.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         {children}
         <script
