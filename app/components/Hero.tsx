@@ -1,18 +1,14 @@
 import { Check, Phone } from "lucide-react";
 
 import { site, whatsappUrl, instagramUrl, telUrl } from "@/lib/site";
+import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
 import { WhatsAppIcon, InstagramIcon } from "./Icons";
 
 export default function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden bg-brand-900">
-      {/*
-        Backdrop is pure CSS so the site ships with zero image weight.
-        To use a real storefront photo instead: drop `hero.webp` into /public
-        and add `bg-[url('/hero.webp')] bg-cover bg-center` to this div. The
-        gradient below already doubles as the contrast overlay.
-      */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,#334155_0%,#0f172a_55%,#0b1220_100%)]"
@@ -26,12 +22,11 @@ export default function Hero() {
         className="absolute -top-24 -right-24 -z-10 h-[28rem] w-[28rem] rounded-full bg-accent-500/15 blur-3xl"
       />
 
-      {/* 4rem subtracted for the sticky header, so the hero still fits one screen. */}
       <div className="mx-auto flex min-h-[calc(88svh-4rem)] max-w-6xl flex-col justify-center px-6 py-24 sm:py-28">
-        <p className="inline-flex w-fit items-center gap-2 rounded-full border border-accent-400/30 bg-accent-400/10 px-4 py-1.5 text-sm font-medium text-accent-400">
+        <Badge variant="outline" className="border-accent-400/30 bg-accent-400/10 text-accent-400 px-4 py-1.5 text-sm gap-2">
           <Check className="h-4 w-4" strokeWidth={2.5} />
           Free delivery inside Kathmandu Valley
-        </p>
+        </Badge>
 
         <h1 className="mt-7 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           {site.name}
@@ -63,7 +58,9 @@ export default function Hero() {
           </Button>
         </div>
 
-        <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-6 border-t border-white/10 pt-8 sm:grid-cols-3">
+        <Separator className="mt-14 bg-white/10" />
+
+        <dl className="mt-8 grid max-w-2xl grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3">
           <div>
             <dt className="text-sm text-brand-200/70">Find us at</dt>
             <dd className="mt-1 font-semibold text-white">

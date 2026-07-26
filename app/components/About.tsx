@@ -1,6 +1,7 @@
 import { HardHat, Cog, Truck, type LucideIcon } from "lucide-react";
 
 import { site } from "@/lib/site";
+import { Card, CardHeader, CardTitle, CardDescription } from "./ui/card";
 
 const highlights: {
   icon: LucideIcon;
@@ -61,19 +62,20 @@ export default function About() {
 
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
             {highlights.map(({ icon: Icon, title, body }) => (
-              <li
-                key={title}
-                className="rounded-2xl border border-brand-100 bg-brand-50/60 p-6 transition-colors hover:border-brand-200"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-800 text-accent-400">
-                  <Icon className="h-6 w-6" strokeWidth={1.6} />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-brand-900">
-                  {title}
-                </h3>
-                <p className="mt-2 text-[0.95rem] leading-relaxed text-brand-600">
-                  {body}
-                </p>
+              <li key={title}>
+                <Card className="border-brand-100 bg-brand-50/60 hover:border-brand-200">
+                  <CardHeader>
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-800 text-accent-400">
+                      <Icon className="h-6 w-6" strokeWidth={1.6} />
+                    </span>
+                    <CardTitle className="text-lg text-brand-900">
+                      {title}
+                    </CardTitle>
+                    <CardDescription className="text-[0.95rem] leading-relaxed text-brand-600">
+                      {body}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
               </li>
             ))}
           </ul>

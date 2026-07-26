@@ -5,7 +5,7 @@
  * going live. Nothing else in the codebase hardcodes contact details.
  */
 
-const rawPhone = "+977 9800000000"; // PLACEHOLDER
+const rawPhone = "+977 9745619978";
 
 export const site = {
   name: "JL Autoparts",
@@ -17,7 +17,7 @@ export const site = {
   phoneDisplay: rawPhone,
   phoneDial: rawPhone.replace(/[^\d+]/g, ""),
   // wa.me needs the country code with no "+", spaces or dashes.
-  whatsappNumber: "9779800000000", // PLACEHOLDER
+  whatsappNumber: "9779745619978",
   whatsappMessage:
     "Hi JL Autoparts! I found you online and I'd like to ask about a product.",
   instagramHandle: "jl_autopart",

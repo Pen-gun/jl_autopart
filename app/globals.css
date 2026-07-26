@@ -19,6 +19,23 @@
   --color-whatsapp: #25d366;
   --color-whatsapp-dark: #1da851;
 
+  /* shadcn semantic tokens mapped to our brand palette. */
+  --color-background: #ffffff;
+  --color-foreground: #1e293b;
+  --color-card: #ffffff;
+  --color-card-foreground: #1e293b;
+  --color-primary: #f59e0b;
+  --color-primary-foreground: #0f172a;
+  --color-secondary: #f6f7f9;
+  --color-secondary-foreground: #1e293b;
+  --color-muted: #f6f7f9;
+  --color-muted-foreground: #475569;
+  --color-accent: #f6f7f9;
+  --color-accent-foreground: #1e293b;
+  --color-destructive: #ef4444;
+  --color-border: #d5dae3;
+  --color-ring: #f59e0b;
+
   --font-sans: var(--font-sans-custom), ui-sans-serif, system-ui, sans-serif;
 }
 
