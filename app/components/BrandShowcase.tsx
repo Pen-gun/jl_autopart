@@ -14,7 +14,7 @@ const brands = [
 
 export default function BrandShowcase() {
   return (
-    <section className="bg-white py-12 sm:py-16">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function BrandShowcase() {
           </h2>
         </motion.div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {brands.map((brand, i) => (
             <motion.div
               key={brand.name}
@@ -39,10 +39,10 @@ export default function BrandShowcase() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="group flex flex-col items-center justify-center rounded-xl border border-brand-100 bg-gradient-to-br from-white to-brand-50/30 p-6 shadow-sm transition-all hover:border-accent-500/40 hover:shadow-md"
+              whileHover={{ y: -2 }}
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl p-3 transition-transform"
             >
-              <div className="relative h-16 w-full">
+              <div className="relative h-14 w-full opacity-90 transition-opacity group-hover:opacity-100 sm:h-16">
                 <Image
                   src={brand.logo}
                   alt={`${brand.name} logo`}
@@ -50,7 +50,9 @@ export default function BrandShowcase() {
                   className="object-contain"
                 />
               </div>
-              <div className="mt-3 text-center text-xs text-brand-600">{brand.tag}</div>
+              <div className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-brand-500">
+                {brand.tag}
+              </div>
             </motion.div>
           ))}
         </div>
