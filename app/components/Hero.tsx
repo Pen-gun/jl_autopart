@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Light gradient for text readability */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"
+        className="absolute inset-0 z-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent dark:from-black/75 dark:via-black/55"
       />
 
       <div
@@ -46,7 +46,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <Badge variant="outline" className="border-accent-500/40 bg-accent-500/10 text-accent-400 px-3 py-1 text-xs gap-1.5 uppercase tracking-wide">
+          <Badge variant="outline" className="border-accent-500/40 bg-accent-500/10 px-3 py-1 text-xs gap-1.5 uppercase tracking-wide text-accent-300 dark:border-accent-400/30 dark:bg-accent-500/15 dark:text-accent-200">
             <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
             Free delivery inside Kathmandu Valley
           </Badge>
@@ -65,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-          className="mt-4 max-w-xl text-base leading-relaxed text-brand-200 sm:text-lg"
+          className="mt-4 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg"
         >
           Premium motorcycle helmets from <span className="font-semibold text-white">LS2, MT Helmets, Steelbird, Studds</span> and more. Plus riding gloves and genuine spare parts from {site.addressLine}.
         </motion.p>
@@ -103,15 +103,15 @@ export default function Hero() {
           className="mt-12 grid max-w-2xl grid-cols-3 gap-x-8 border-t border-white/10 pt-6"
         >
           <div>
-            <dt className="text-xs uppercase tracking-wide text-brand-200/60">Location</dt>
+            <dt className="text-xs uppercase tracking-wide text-white/70">Location</dt>
             <dd className="mt-1 text-sm font-semibold text-white">{site.addressLine}</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-wide text-brand-200/60">Hours</dt>
+            <dt className="text-xs uppercase tracking-wide text-white/70">Hours</dt>
             <dd className="mt-1 text-sm font-semibold text-white">Sun to Fri, 9 to 7</dd>
           </div>
           <div>
-            <dt className="text-xs uppercase tracking-wide text-brand-200/60">Delivery</dt>
+            <dt className="text-xs uppercase tracking-wide text-white/70">Delivery</dt>
             <dd className="mt-1 text-sm font-semibold text-white">Free in Valley</dd>
           </div>
         </motion.dl>

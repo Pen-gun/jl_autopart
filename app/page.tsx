@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <a
         href="#contact"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-brand-900"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-card focus:px-4 focus:py-2 focus:font-semibold focus:text-card-foreground focus:shadow-lg"
       >
         Skip to contact details
       </a>

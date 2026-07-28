@@ -14,7 +14,7 @@ const brands = [
 
 export default function BrandShowcase() {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="bg-muted/30 py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,12 +26,12 @@ export default function BrandShowcase() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
             Authorized Dealer
           </p>
-          <h2 className="mt-2 font-heading text-2xl font-bold uppercase tracking-tight text-brand-900 sm:text-3xl">
+          <h2 className="mt-2 font-heading text-2xl font-bold uppercase tracking-tight text-foreground sm:text-3xl">
             Genuine Helmet Brands
           </h2>
         </motion.div>
 
-        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {brands.map((brand, i) => (
             <motion.div
               key={brand.name}
@@ -40,7 +40,7 @@ export default function BrandShowcase() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               whileHover={{ y: -2 }}
-              className="group flex flex-col items-center justify-center gap-3 rounded-2xl p-3 transition-transform"
+              className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-border/70 bg-card/80 px-4 py-5 shadow-sm transition-transform backdrop-blur-sm"
             >
               <div className="relative h-14 w-full opacity-90 transition-opacity group-hover:opacity-100 sm:h-16">
                 <Image
@@ -50,7 +50,7 @@ export default function BrandShowcase() {
                   className="object-contain"
                 />
               </div>
-              <div className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-brand-500">
+              <div className="text-center text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
                 {brand.tag}
               </div>
             </motion.div>

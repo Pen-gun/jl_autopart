@@ -22,7 +22,7 @@ const features = [
 
 export default function TrustBar() {
   return (
-    <div className="border-b border-brand-100 bg-white">
+    <div className="border-b border-border bg-background">
       <div className="mx-auto max-w-6xl px-6 py-4">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {features.map(({ icon: Icon, text }, i) => (
@@ -31,7 +31,7 @@ export default function TrustBar() {
               className="flex items-center justify-center gap-2 text-sm"
             >
               <Icon className="h-4 w-4 text-accent-600" strokeWidth={2} />
-              <span className="font-medium text-brand-800">{text}</span>
+              <span className="font-medium text-foreground">{text}</span>
             </div>
           ))}
         </div>

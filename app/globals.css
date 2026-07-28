@@ -40,8 +40,30 @@
   --font-heading: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
 }
 
+html.dark {
+  --color-background: #0b1220;
+  --color-foreground: #e2e8f0;
+  --color-card: #111827;
+  --color-card-foreground: #e2e8f0;
+  --color-primary: #fbbf24;
+  --color-primary-foreground: #0b1220;
+  --color-secondary: #111827;
+  --color-secondary-foreground: #e2e8f0;
+  --color-muted: #111827;
+  --color-muted-foreground: #94a3b8;
+  --color-accent: #111827;
+  --color-accent-foreground: #e2e8f0;
+  --color-border: #1f2937;
+  --color-ring: #fbbf24;
+}
+
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 /* Keep anchor targets clear of the sticky 3.5rem header. */
@@ -50,8 +72,16 @@ section[id] {
 }
 
 body {
-  background-color: #ffffff;
-  color: var(--color-brand-800);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+html.dark body {
+  background-image:
+    radial-gradient(circle at top, rgba(245, 158, 11, 0.08), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.08), transparent 28%),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(2, 6, 23, 1));
+  background-attachment: fixed;
 }
 
 /* Consistent, visible focus ring across every interactive element. */

@@ -39,7 +39,7 @@ const helmets = [
 
 export default function FeaturedProducts() {
   return (
-    <section className="bg-gradient-to-b from-white to-brand-50/30 py-16 sm:py-24">
+    <section className="bg-gradient-to-b from-background to-muted/30 py-16 sm:py-24 dark:from-background dark:to-background">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ export default function FeaturedProducts() {
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-600">
             Featured Helmets
           </p>
-          <h2 className="mt-2 font-heading text-3xl font-bold uppercase tracking-tight text-brand-900 sm:text-4xl">
+          <h2 className="mt-2 font-heading text-3xl font-bold uppercase tracking-tight text-foreground sm:text-4xl">
             Protection Starts Here
           </h2>
-          <p className="mt-3 text-base text-brand-600">
+          <p className="mt-3 text-base text-muted-foreground">
             Premium full-face helmets for every rider and budget
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export default function FeaturedProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-xl border border-brand-100 bg-white shadow-sm transition-all hover:border-accent-500/40 hover:shadow-lg"
+              className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all hover:border-accent-500/40 hover:shadow-lg"
             >
               {/* Placeholder for helmet image */}
               <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-brand-50 to-brand-100/50">
@@ -80,18 +80,18 @@ export default function FeaturedProducts() {
                     <div className="text-xs font-semibold uppercase tracking-wide text-accent-600">
                       {helmet.brand}
                     </div>
-                    <h3 className="mt-1 font-heading text-lg font-bold uppercase tracking-tight text-brand-900">
+                    <h3 className="mt-1 font-heading text-lg font-bold uppercase tracking-tight text-foreground">
                       {helmet.name}
                     </h3>
                   </div>
                 </div>
 
-                <div className="mb-3 inline-flex items-center gap-1 rounded-md bg-brand-100 px-2 py-1 text-xs font-medium text-brand-700">
+                <div className="mb-3 inline-flex items-center gap-1 rounded-md bg-muted px-2 py-1 text-xs font-medium text-foreground">
                   <Star className="h-3 w-3" />
                   {helmet.type}
                 </div>
 
-                <ul className="mb-4 space-y-1.5 text-xs text-brand-600">
+                <ul className="mb-4 space-y-1.5 text-xs text-muted-foreground">
                   {helmet.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-1.5">
                       <div className="h-1 w-1 rounded-full bg-accent-500" />
@@ -100,7 +100,7 @@ export default function FeaturedProducts() {
                   ))}
                 </ul>
 
-                <div className="mb-3 font-heading text-base font-bold text-brand-900">
+                <div className="mb-3 font-heading text-base font-bold text-foreground">
                   {helmet.price}
                 </div>
 
@@ -127,7 +127,7 @@ export default function FeaturedProducts() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-10 text-center"
         >
-          <p className="text-sm text-brand-600">
+            <p className="text-sm text-muted-foreground">
             Looking for a different model or size?{" "}
             <a
               href={whatsappUrl}

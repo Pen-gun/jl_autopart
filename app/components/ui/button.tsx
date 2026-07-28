@@ -15,12 +15,12 @@ const buttonVariants = cva(
       variant: {
         whatsapp:
           "bg-whatsapp text-white shadow-lg shadow-whatsapp/20 hover:bg-whatsapp-dark",
-        accent: "bg-accent-500 text-brand-900 hover:bg-accent-400",
+        accent: "bg-accent-500 text-brand-900 hover:bg-accent-400 dark:text-brand-950",
         // Ghost button for use on the dark hero backdrop.
         outlineLight:
-          "border border-white/20 text-white hover:border-white/40 hover:bg-white/5",
+          "border border-white/20 text-white hover:border-white/40 hover:bg-white/5 dark:border-border dark:text-foreground dark:hover:bg-muted/70",
         outline:
-          "border border-brand-200 text-brand-800 hover:border-brand-600 hover:bg-brand-50",
+          "border border-border text-foreground hover:border-brand-600 hover:bg-muted/70",
       },
       size: {
         default: "min-h-[52px] px-7",
