@@ -9,6 +9,7 @@
   --color-brand-700: #334155;
   --color-brand-800: #1e293b;
   --color-brand-900: #0f172a;
+  --color-brand-950: #0a1120;
 
   /* Accent: warm amber. Safety-gear orange without shouting. */
   --color-accent-400: #fbbf24;
@@ -20,9 +21,9 @@
   --color-whatsapp-dark: #1da851;
 
   /* shadcn semantic tokens mapped to our brand palette. */
-  --color-background: #ffffff;
+  --color-background: #fafbfc;
   --color-foreground: #1e293b;
-  --color-card: #ffffff;
+  --color-card: #fafbfc;
   --color-card-foreground: #1e293b;
   --color-primary: #f59e0b;
   --color-primary-foreground: #0f172a;

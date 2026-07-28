@@ -1,45 +1,48 @@
 "use client";
 
-import { MoonStar, SunMedium } from "lucide-react";
+import { MoonStar, SunMedium, Monitor } from "lucide-react";
 import { useEffect, useState } from "react";
 
+type Theme = "light" | "dark" | "system";
+
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setTheme] = useState<Theme>("system");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    setIsDark(document.documentElement.classList.contains("dark"));
+    const stored = localStorage.getItem("jl-theme") as Theme | null;
+    const resolved = stored || "system";
+    setTheme(resolved);
+    applyTheme(resolved);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark((current) => {
-      const next = !current;
-      document.documentElement.classList.toggle("dark", next);
-      localStorage.setItem("jl-theme", next ? "dark" : "light");
+  const applyTheme = (t: Theme) => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const shouldBeDark = t === "dark" || (t === "system" && prefersDark);
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+  };
+
+  const cycleTheme = () => {
+    setTheme((current) => {
+      const next = current === "light" ? "dark" : current === "dark" ? "system" : "light";
+      localStorage.setItem("jl-theme", next);
+      applyTheme(next);
       return next;
     });
   };
 
+  const Icon = theme === "light" ? SunMedium : theme === "dark" ? MoonStar : Monitor;
+  const label = theme === "light" ? "Light" : theme === "dark" ? "Dark" : "System";
+
   return (
     <button
       type="button"
-      aria-label={mounted && isDark ? "Switch to light mode" : "Switch to dark mode"}
-      aria-pressed={isDark}
-      onClick={toggleTheme}
-      className="inline-flex h-10 items-center gap-2 rounded-full border border-border bg-card px-3 text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted/80"
+      aria-label={`Theme: ${label}. Click to cycle.`}
+      onClick={cycleTheme}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-sm font-medium text-foreground shadow-sm transition-colors hover:bg-muted/80"
     >
-      {mounted && isDark ? (
-        <>
-          <SunMedium className="h-4 w-4 text-accent-500" />
-          <span className="hidden sm:inline">Light</span>
-        </>
-      ) : (
-        <>
-          <MoonStar className="h-4 w-4 text-accent-600" />
-          <span className="hidden sm:inline">Dark</span>
-        </>
-      )}
+      {mounted && <Icon className="h-4 w-4 text-accent-500" />}
     </button>
   );
 }
