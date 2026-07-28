@@ -1,14 +1,15 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const brands = [
-  { name: "LS2", tag: "Premium Full-Face" },
-  { name: "MT Helmets", tag: "European Design" },
-  { name: "Steelbird", tag: "ISI Certified" },
-  { name: "Studds", tag: "Trusted Quality" },
-  { name: "SMK", tag: "Track Ready" },
-  { name: "Vega", tag: "Street & Sport" },
+  { name: "LS2", logo: "/ls2-logo.png", tag: "Premium Full-Face" },
+  { name: "MT Helmets", logo: "/mt-logo.png", tag: "European Design" },
+  { name: "Steelbird", logo: "/steelbird-logo.png", tag: "ISI Certified" },
+  { name: "Studds", logo: "/studds-logo.png", tag: "Trusted Quality" },
+  { name: "SMK", logo: "/smk-logo.png", tag: "Track Ready" },
+  { name: "Vega", logo: "/vega-logo.png", tag: "Street & Sport" },
 ];
 
 export default function BrandShowcase() {
@@ -41,12 +42,15 @@ export default function BrandShowcase() {
               whileHover={{ scale: 1.05 }}
               className="group flex flex-col items-center justify-center rounded-xl border border-brand-100 bg-gradient-to-br from-white to-brand-50/30 p-6 shadow-sm transition-all hover:border-accent-500/40 hover:shadow-md"
             >
-              <div className="text-center">
-                <div className="font-heading text-xl font-bold uppercase tracking-tight text-brand-900 sm:text-2xl">
-                  {brand.name}
-                </div>
-                <div className="mt-1 text-xs text-brand-600">{brand.tag}</div>
+              <div className="relative h-16 w-full">
+                <Image
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  fill
+                  className="object-contain"
+                />
               </div>
+              <div className="mt-3 text-center text-xs text-brand-600">{brand.tag}</div>
             </motion.div>
           ))}
         </div>

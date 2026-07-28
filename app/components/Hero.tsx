@@ -2,6 +2,7 @@
 
 import { Check, Phone } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 import { site, whatsappUrl, instagramUrl, telUrl } from "@/lib/site";
 import { Badge } from "./ui/badge";
@@ -10,48 +11,36 @@ import { WhatsAppIcon, InstagramIcon } from "./Icons";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-brand-900">
+    <section id="home" className="relative isolate overflow-hidden">
+      {/* Full background helmet image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        aria-hidden="true"
+        className="absolute inset-0 z-0"
+      >
+        <Image
+          src="/helmet-1.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+      </motion.div>
+
+      {/* Light gradient for text readability */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-800 to-brand-900"
-      />
-
-      {/* Helmet background images */}
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 0.15, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        aria-hidden="true"
-        className="absolute right-0 top-1/2 -z-10 h-[600px] w-[600px] -translate-y-1/2"
-        style={{
-          backgroundImage: "url(/helmet-1.jpg)",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "brightness(0.8)",
-        }}
-      />
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 0.08, x: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        aria-hidden="true"
-        className="absolute left-0 bottom-0 -z-10 h-[400px] w-[400px]"
-        style={{
-          backgroundImage: "url(/helmet-2.jpg)",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "brightness(0.6)",
-        }}
+        className="absolute inset-0 z-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"
       />
 
       <div
         aria-hidden="true"
-        className="absolute top-0 left-0 right-0 h-1 bg-accent-500"
+        className="absolute top-0 left-0 right-0 z-10 h-1 bg-accent-500"
       />
 
-      <div className="mx-auto flex min-h-[calc(88svh-3.5rem)] max-w-6xl flex-col justify-center px-6 py-20 sm:py-24">
+      <div className="relative z-10 mx-auto flex min-h-[calc(88svh-3.5rem)] max-w-6xl flex-col justify-center px-6 py-20 sm:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
