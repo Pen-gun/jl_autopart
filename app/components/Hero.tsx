@@ -15,6 +15,37 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-800 to-brand-900"
       />
+
+      {/* Helmet background images */}
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 0.15, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        aria-hidden="true"
+        className="absolute right-0 top-1/2 -z-10 h-[600px] w-[600px] -translate-y-1/2"
+        style={{
+          backgroundImage: "url(/helmet-1.jpg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "brightness(0.8)",
+        }}
+      />
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 0.08, x: 0 }}
+        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+        aria-hidden="true"
+        className="absolute left-0 bottom-0 -z-10 h-[400px] w-[400px]"
+        style={{
+          backgroundImage: "url(/helmet-2.jpg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          filter: "brightness(0.6)",
+        }}
+      />
+
       <div
         aria-hidden="true"
         className="absolute top-0 left-0 right-0 h-1 bg-accent-500"
@@ -47,8 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
           className="mt-4 max-w-xl text-base leading-relaxed text-brand-200 sm:text-lg"
         >
-          {site.tagline}. Helmets, gloves, and genuine spare parts
-          from {site.addressLine}.
+          Premium motorcycle helmets from <span className="font-semibold text-white">LS2, MT Helmets, Steelbird, Studds</span> and more. Plus riding gloves and genuine spare parts from {site.addressLine}.
         </motion.p>
 
         <motion.div

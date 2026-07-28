@@ -1,5 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TrustBar from "./components/TrustBar";
+import BrandShowcase from "./components/BrandShowcase";
+import FeaturedProducts from "./components/FeaturedProducts";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -16,6 +19,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <TrustBar />
+        <BrandShowcase />
+        <FeaturedProducts />
         <About />
         <Contact />
       </main>
